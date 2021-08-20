@@ -1,14 +1,18 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MycalcLibModule } from 'mycalc-lib';
 
 import { AppComponent } from './app.component';
+import { TddAngularComponent } from './tdd-angular/tdd-angular.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TddAngularComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    MycalcLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -118,6 +118,46 @@
           }
         }
       }
+    },
+    "mycalc-lib": {
+      "projectType": "library",
+      "root": "projects/mycalc-lib",
+      "sourceRoot": "projects/mycalc-lib/src",
+      "prefix": "abc",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/mycalc-lib/tsconfig.lib.json",
+            "project": "projects/mycalc-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/mycalc-lib/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/mycalc-lib/src/test.ts",
+            "tsConfig": "projects/mycalc-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/mycalc-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/mycalc-lib/tsconfig.lib.json",
+              "projects/mycalc-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "mycal-lib-app"
